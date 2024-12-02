@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   List destinations = ['Walled City of Lahore', 'Hunza', 'Skardu'];
+  List popular = ['Lexus', 'EAGLE Peak', 'Masjid Wazir Khan'];
   HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Travel Buddy"),
+        title: const Text("Travel Tribes"),
+        foregroundColor: Colors.white,
         backgroundColor: Colors.orangeAccent,
         elevation: 0,
         actions: [
@@ -38,7 +40,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
+              SizedBox(
                 height: 200,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -86,20 +88,20 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.orangeAccent,
         unselectedItemColor: Colors.grey,
-        items: [
-          const BottomNavigationBarItem(
+        items: const [
+          BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: "Favorites",
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: "Profile",
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: "Settings",
           ),
@@ -174,9 +176,9 @@ class HomePage extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 10),
           child: Expanded(
             child: ListTile(
-              leading: Image.asset('assets/popular${index + 1}.jpg',
+              leading: Image.asset('images/image_${index + 9}.jpg',
                   width: 50, height: 50),
-              // title: Text("Popular Place ${index + 1}"),
+              title: Text(popular[index]),
               // subtitle: const Text("Beautiful sights to explore"),
               trailing:
                   const Icon(Icons.arrow_forward, color: Colors.orangeAccent),
